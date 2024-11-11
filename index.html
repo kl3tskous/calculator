@@ -1,51 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Stop-Loss Calculator</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
-</head>
-<body>
-    <div class="dashboard-container">
-        <h1>Crypto Stop-Loss Calculator</h1>
-
-        <!-- Cryptocurrency Selection Buttons -->
-        <div class="crypto-selection">
-            <button class="crypto-button" onclick="selectCrypto('bitcoin', 'BTC')">BTC</button>
-            <button class="crypto-button" onclick="selectCrypto('ethereum', 'ETH')">ETH</button>
-            <button class="crypto-button" onclick="selectCrypto('solana', 'SOL')">SOL</button>
-        </div>
-
-        <!-- Entry Price and Calculation Fields -->
-        <div class="input-section">
-            <div class="input-group">
-                <label>Entry Price (USD): <span id="entry-price">Select a cryptocurrency</span></label>
-            </div>
-            <div class="input-group">
-                <label>Amount in Trade (USD):</label>
-                <input type="number" id="trade-amount" placeholder="Enter amount in USD">
-            </div>
-            <div class="input-group">
-                <label>Portfolio Size (USD):</label>
-                <input type="number" id="portfolio-size" placeholder="Enter portfolio size in USD">
-            </div>
-            <div class="input-group">
-                <label>Risk Percentage (%):</label>
-                <input type="number" id="risk-percentage" placeholder="Enter risk percentage">
-            </div>
-            <div class="input-group">
-                <label>Leverage:</label>
-                <input type="number" id="leverage" placeholder="Enter leverage">
-            </div>
-            <button class="calculate-btn" onclick="calculateStopLoss()">Calculate Stop-Loss</button>
-        </div>
-
-        <!-- Stop-Loss Result -->
-        <div class="result-section">
-            <h3 id="stop-loss-result">Stop-Loss Price: </h3>
-        </div>
-    </div>
-</body>
-</html>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div id="tradingview_chart"></div>
+</div>
+<script type="text/javascript">
+    new TradingView.widget({
+        "container_id": "tradingview_chart",
+        "autosize": true,
+        "symbol": "BINANCE:BTCUSDT",
+        "interval": "15",
+        "timezone": "Etc/UTC",
+        "theme": "dark",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "hide_legend": false,
+        "save_image": false,
+        "studies": ["RSI@tv-basicstudies", "MACD@tv-basicstudies"],
+        "withdateranges": true,
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "details": true,
+        "show_popup_button": true,
+        "popup_width": "1000",
+        "popup_height": "650"
+    });
+</script>
+<!-- TradingView Widget END -->
